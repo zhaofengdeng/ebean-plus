@@ -14,7 +14,7 @@
 	ExpressionList<User> el = Ebean.find(User.class).where();
 	Paginate<User> paginate = EbeanPaginateUtil.paginate(el, 1, 15);
 
-2.提供日志功能
+ 暂未实现=============2.提供日志功能
 
   调用更新时，自动校验现有的功能与之前的功能有何区别
   
@@ -34,10 +34,12 @@
 	调用EbeanUtil.toModel
 
 4.提供常用的查询条件拼接
+	使用EbeanELUtil工具类
+	模糊查询：like
+	精确查询：eq
+	时间拼接：beginDate，endDate
 
-  like,equals,日期拼接
-  
-  增加查询规则对象
+ 暂未实现=============增加查询规则对象
   
   
 5.提供删除功能
