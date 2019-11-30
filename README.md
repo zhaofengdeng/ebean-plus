@@ -23,6 +23,13 @@
   
 3.提供Row、sql转model的工具类
 
+   rows转model	
+   List<SqlRow> rows  = Ebean.createSqlQuery("select * from tbl_user").findList();
+   List<User> usres = EbeanUtil.toList(rows, User.class);
+   sql转model
+   List<User> usres = EbeanUtil.toList("select * from tbl_user", User.class);
+   row转model
+   调用EbeanUtil.toModel
 
 4.提供常用的查询条件拼接
 
