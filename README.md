@@ -2,17 +2,17 @@
 基于ebean开发一些拓展功能
 
 1.提供分页功能，分页（Paginate）
-
-    query分页
-    ExpressionList<User> el = Ebean.find(User.class).where();
-    el.like("name", "%1%");
-    Query<User> query = el.orderBy("id desc");
-    Paginate<User> paginate = EbeanPaginateUtil.paginate(query, 1, 15);
-    List<User> models = paginate.getModels();
-
-    el分页
-    ExpressionList<User> el = Ebean.find(User.class).where();
-    Paginate<User> paginate = EbeanPaginateUtil.paginate(el, 1, 15);
+	
+	query分页
+	ExpressionList<User> el = Ebean.find(User.class).where();
+	el.like("name", "%1%");
+	Query<User> query = el.orderBy("id desc");
+	Paginate<User> paginate = EbeanPaginateUtil.paginate(query, 1, 15);
+	List<User> models = paginate.getModels();
+	
+	el分页
+	ExpressionList<User> el = Ebean.find(User.class).where();
+	Paginate<User> paginate = EbeanPaginateUtil.paginate(el, 1, 15);
 
 2.提供日志功能
 
@@ -22,14 +22,16 @@
   
   
 3.提供Row、sql转model的工具类
-
-   rows转model	
-   List<SqlRow> rows  = Ebean.createSqlQuery("select * from tbl_user").findList();
-   List<User> usres = EbeanUtil.toList(rows, User.class);
-   sql转model
-   List<User> usres = EbeanUtil.toList("select * from tbl_user", User.class);
-   row转model
-   调用EbeanUtil.toModel
+	
+	rows转model
+	List<SqlRow> rows  = Ebean.createSqlQuery("select * from tbl_user").findList();
+	List<User> usres = EbeanUtil.toList(rows, User.class);
+	
+	sql转model
+	List<User> usres = EbeanUtil.toList("select * from tbl_user", User.class);
+	
+	row转model
+	调用EbeanUtil.toModel
 
 4.提供常用的查询条件拼接
 
