@@ -2,6 +2,9 @@ package com.util;
 
 import java.util.Date;
 
+
+import com.util.base.StringUtil;
+
 import io.ebean.ExpressionList;
 
 public class EbeanELUtil {

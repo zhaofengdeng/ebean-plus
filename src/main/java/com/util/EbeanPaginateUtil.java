@@ -2,7 +2,10 @@ package com.util;
 
 import java.util.List;
 
+
 import com.model.Paginate;
+import com.util.base.IntUtil;
+import com.util.base.StringUtil;
 
 import io.ebean.ExpressionList;
 import io.ebean.Query;
@@ -25,6 +28,35 @@ public class EbeanPaginateUtil {
 		}
 		Query query = el.query();
 		return paginate(query, curPage, maxPerPage);
+	}
+	/**
+	 * 
+	 * @param el
+	 * @param curPage    当前页数,为空第一页
+	 * @param maxPerPage 每页最大条数（每页多少条）,为空15条
+	 * @return
+	 */
+	public  static  <T>  Paginate paginate(ExpressionList<T> el, String curPage, String maxPerPage) {
+		Integer curPageInt=IntUtil.parseInt(curPage);
+		Integer maxPerPageInt=IntUtil.parseInt(maxPerPage);
+		if(curPageInt==null) {
+			curPageInt=1;
+		}
+		if(maxPerPage==null) {
+			maxPerPageInt=15;
+		}
+		return paginate(el, curPageInt, maxPerPageInt);
+	}
+	public  static  <T>  Paginate paginate(Query<T> query, String curPage, String maxPerPage) {
+		Integer curPageInt=IntUtil.parseInt(curPage);
+		Integer maxPerPageInt=IntUtil.parseInt(maxPerPage);
+		if(curPageInt==null) {
+			curPageInt=1;
+		}
+		if(maxPerPage==null) {
+			maxPerPageInt=15;
+		}
+		return paginate(query, curPageInt, maxPerPageInt);
 	}
 
 	/**

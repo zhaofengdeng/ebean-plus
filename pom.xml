@@ -5,15 +5,21 @@
 
 	<groupId>com</groupId>
 	<artifactId>ebean-plus</artifactId>
-	<version>0.1</version>
+	<version>0.3</version>
 	<packaging>jar</packaging>
 
 	<name>ebean-plus</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+	<java.version>1.8</java.version>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	<maven.compiler.source>${java.version}</maven.compiler.source>
+	<maven.compiler.target>${java.version}</maven.compiler.target>
+    <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+</properties>
+
 
 	<dependencies>
 		<!-- ebean使用 -->
@@ -33,6 +39,11 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.22</version>
+		</dependency>
+			<dependency>
+			<groupId>util</groupId>
+			<artifactId>base</artifactId>
+			<version>0.22</version>
 		</dependency>
 	</dependencies>
 	<repositories>
