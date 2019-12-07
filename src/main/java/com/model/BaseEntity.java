@@ -12,7 +12,7 @@ public abstract class BaseEntity {
 	public abstract void setInsertedAt(Date date);
 	public abstract void setUpdatedAt(Date updatedAt) ;
 	public abstract void setDeleted(Boolean deleted);
-	public abstract <T> T  getId();
+	public abstract Long  getId();
 	public void save() {
 		this.setInsertedAt(new Date());
 		this.setUpdatedAt(new Date());
