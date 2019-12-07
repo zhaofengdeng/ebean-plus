@@ -42,7 +42,7 @@ public class EbeanPaginateUtil {
 		if(curPageInt==null) {
 			curPageInt=1;
 		}
-		if(maxPerPage==null) {
+		if(maxPerPageInt==null) {
 			maxPerPageInt=15;
 		}
 		return paginate(el, curPageInt, maxPerPageInt);

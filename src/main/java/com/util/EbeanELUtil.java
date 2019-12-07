@@ -15,7 +15,7 @@ public class EbeanELUtil {
 	 * @param key
 	 * @param value
 	 */
-	public static void like(ExpressionList el, String key, Object value) {
+	public static void like(ExpressionList el, String key, String value) {
 		if (value != null && StringUtil.isNotNullOrEmpty(value.toString())) {
 			el.like(key, "%" + value + "%");
 		}

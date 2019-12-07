@@ -5,7 +5,7 @@
 
 	<groupId>com</groupId>
 	<artifactId>ebean-plus</artifactId>
-	<version>1.01</version>
+	<version>1.07</version>
 	<packaging>jar</packaging>
 
 	<name>ebean-plus</name>
